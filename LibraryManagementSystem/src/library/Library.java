@@ -3,8 +3,6 @@ package library;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 public class Library {
 	public Library() {
 		blist = new ArrayList<Book>();
@@ -54,8 +52,21 @@ public class Library {
 	}
 
 	public void addBook(String name, String authorname, double price, int quantity) {
-		Book b = new Book(name, authorname, price, quantity);
-		blist.add(b);
+		if (name.length() > 50) {
+			System.out.println("book name must be store 50 character");
+		}else if(authorname.length()>50) {
+			System.out.println("authorname must be store 50 character");
+		}else if(name!=null && name.isEmpty()) {
+			System.out.println("book name doestnot store null value and blank data");
+		}
+		else if(authorname!=null && authorname.isEmpty()) {
+			System.out.println("author name doestnot store null value and blank data");
+		}
+		else {
+
+			Book b = new Book(name, authorname, price, quantity);
+			blist.add(b);
+		}
 	}
 
 	public void returnBook(String bname) {
