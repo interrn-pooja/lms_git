@@ -2,18 +2,29 @@ package library;
 
 public class Runner {
 	public static void main(String[] args) {
+		/**
+		 * declare a library class object
+		 */
 		Library lib = new Library();
+		
+		/**
+		 * add book on library class object lib
+		 */
 
-		lib.addBook("  java  ", "  pooja   ", 20.50, 3);
-		/*lib.addBook("c++", "darshita", 25.50, 5);
-		lib.addBook("dotnet", "subhana", 30.00, 5);
-		Book b = new Book("python", "rajat", 50.00, 7);
-		lib.addBook(b);*/
+		lib.addBook("  c++ ", "  pooja   ", 0, 5);
+		
+		/**
+		 * call a method print book with the help of library class object this method is
+		 * used to print book
+		 */
 		lib.printBook();
+		/**
+		 * issue book method is used to issue a book on a library
+		 */
+		//lib.issueBook("java");
+		//lib.printBook();
 		
-		
-		
-		lib.issueBook("java");
-		lib.printBook();
+		//lib.returnBook("java");
+		//lib.printBook();
 	}
 }

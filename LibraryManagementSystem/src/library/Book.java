@@ -59,7 +59,7 @@ public class Book {
 	}
 
 	/**
-	 * getname method is used to get the name of book
+	 * get name method is used to get the name of book
 	 */
 
 	public String getname() {
@@ -71,7 +71,7 @@ public class Book {
 	}
 
 	/**
-	 * getname method is used to get the name of author
+	 * get author name method is used to get the name of author
 	 */
 	public String getauthorname() {
 		/**
@@ -81,7 +81,7 @@ public class Book {
 	}
 
 	/**
-	 * getname method is used to get the price of book
+	 * get price method is used to get the price of book
 	 */
 	public double getprice() {
 
@@ -92,11 +92,11 @@ public class Book {
 	}
 
 	/**
-	 * getname method is used to get the quantity of book
+	 * get quantity method is used to get the quantity of book
 	 */
 	public int getquantity() {
 		/**
-		 * @return int this return the quantity of book
+		 * @return integer this return the quantity of book
 		 */
 		return quantity;
 	}
