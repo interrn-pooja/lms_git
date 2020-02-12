@@ -67,8 +67,13 @@ public class Library {
 	}
 
 	public void printBook() {
-		System.out.println(blist);
 
+		boolean ans = blist.isEmpty();
+		if (ans == true) {
+			System.out.println("the list is empty please add the book");
+		} else {
+			System.out.println(blist);
+		}
 	}
 
 	public void addBook(Book b1) {
@@ -102,12 +107,12 @@ public class Library {
 		} else if (authorname != null && authorname.isEmpty()) {
 			System.out.println("author name doestnot store null value and blank data");
 		} else if (quantity <= 0) {
-			System.out.println(name+" book quantity is not zero");
+			System.out.println(name + " book quantity should have greater than zero");
 
 		} else if (price <= 0.0) {
-			System.out.println(name+" book price is not zero");
+			System.out.println(name + " book price should have greater than zero");
 		}
-		
+
 		else {
 			/**
 			 * blist.add(b) is used to add a books on a list trim() is used to a leading and
