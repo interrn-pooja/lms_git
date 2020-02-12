@@ -11,22 +11,30 @@ public class Runner {
 		 * add book on library class object lib
 		 */
 
-		lib.addBook("  c++ ", "  pooja   ",8.50, 9);
+		lib.addBook("  c++ ", "  pooja   ",8.50, 3);
 		
-		/**
-		 * call a method print book with the help of library class object this method is
-		 * used to print book
-		 */
 		lib.printBook();
 		
 		
-		/**
-		 * issue book method is used to issue a book on a library
-		 */
-		//lib.issueBook("java");
-		//lib.printBook();
 		
-		//lib.returnBook("java");
-		//lib.printBook();
+		lib.issueBook("c++");
+		lib.printBook();
+		
+
+		lib.issueBook("c++");
+		lib.printBook();
+
+		lib.issueBook("c++");
+		lib.printBook();
+
+		lib.issueBook("c++");
+		lib.printBook();
+		 
+		
+		lib.returnBook("c++");
+		lib.printBook();
 	}
-}
+	}
+	
+	
+

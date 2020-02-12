@@ -19,9 +19,12 @@ public class Library {
 		 * declare a array list
 		 */
 		blist = new ArrayList<Book>();
+		qlist = new ArrayList<Integer>();
+
 	}
 
 	private List<Book> blist;
+	private List<Integer> qlist;
 
 	/**
 	 * create a method issue book. issue book is used to perform a such operation
@@ -121,7 +124,7 @@ public class Library {
 			 */
 			Book b = new Book(name.trim(), authorname.trim(), price, quantity);
 			blist.add(b);
-
+            qlist.add(quantity);
 		}
 
 	}
@@ -136,21 +139,30 @@ public class Library {
 	 */
 	public void returnBook(String bname) {
 		for (int s = 0; s < blist.size(); s++) {
+			
 			Book b = blist.get(s);
+			
 			if (bname.equalsIgnoreCase(b.getname())) {
-				System.out.println(s);
+
 				int a = b.getquantity();
-				if (a > 0) {
-					/**
-					 * line no 135 represent that the quantity of book is increases
-					 */
-					b.setQuantity(a + 1);
+
+				if (qlist.get(s) == a) {
+					System.out.println("can not return the book");
+				} else {
+					System.out.println(s);
+					if (a >= 0) {
+
+						/**
+						 * line no 135 represent that the quantity of book is increases
+						 */
+						b.setQuantity(a + 1);
+					}
 				}
-
+				
 				break;
+
 			}
-
 		}
-
 	}
+
 }
