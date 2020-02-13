@@ -96,7 +96,7 @@ public class Library {
 		 * the length of book name should have only 50
 		 * character
 		 */
-		boolean bns=false;
+		
 		if (name.length() > 50) {
 			System.out.println(Thread.currentThread().getId()+" | "+"book name must be store 50 character");
 		}
@@ -122,8 +122,6 @@ public class Library {
 
 		} else if (price <= 0.0) {
 			System.out.println(Thread.currentThread().getId()+" | "+name + " book price should have greater than zero");
-		}else if(!bns) {
-			System.out.println(Thread.currentThread().getId()+" | "+name+  "book is already added in list");
 		}
 		else {
 			/**
@@ -131,7 +129,7 @@ public class Library {
 			 * trailing a string
 			 * 
 			 */
-			bns=true;
+			
 			Book b = new Book(name.trim(), authorname.trim(), price, quantity);
 
 			blist.add(b);

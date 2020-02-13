@@ -12,12 +12,9 @@ public class Runner {
 		 */
 		lib1.addBook("java", "pooja", 50.00, 4);
 		lib1.printBook();
-		
-		System.out.println("*******************");
-		lib1.addBook("java", "darshita", 80.00, 2);
+		   
+		lib1.addBook("java", "pooja1", 50.00, 4);
 		lib1.printBook();
-		
-         lib1.returnBook("c++");
-         lib1.printBook();
+		   
 	}
 }
