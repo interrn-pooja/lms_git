@@ -51,7 +51,7 @@ public class Library {
 			 * equalsIgnorecase is used to compare two string and ignore the cases
 			 */
 			if (bname.equalsIgnoreCase(b.getname())) {
-				System.out.println(s);
+				System.out.println(Thread.currentThread().getId()+" | "+s);
 				int a = b.getquantity();
 				if (a > 0) {
 					/**
@@ -60,7 +60,7 @@ public class Library {
 					b.setQuantity(a - 1);
 					bookexist = true;
 				} else {
-					System.out.println(" book of  " + bname + "  in the library is not available");
+					System.out.println(Thread.currentThread().getId()+" | "+" book of  " + bname + "  in the library is not available");
 				}
 				break;
 			}
@@ -71,7 +71,7 @@ public class Library {
 		 * found
 		 */
 		if (!bookexist) {
-			System.out.println("book not found");
+			System.out.println(Thread.currentThread().getId()+" | "+"book not found");
 		}
 
 	}
@@ -80,9 +80,9 @@ public class Library {
 
 		boolean ans = blist.isEmpty();
 		if (ans == true) {
-			System.out.println("the list is empty please add the book");
+			System.out.println(Thread.currentThread().getId()+" | "+"the list is empty please add the book");
 		} else {
-			System.out.println(blist);
+			System.out.println(Thread.currentThread().getId()+" | "+blist);
 		}
 	}
 
@@ -96,31 +96,34 @@ public class Library {
 		 * the length of book name should have only 50
 		 * character
 		 */
+		boolean bns=false;
 		if (name.length() > 50) {
-			System.out.println("book name must be store 50 character");
+			System.out.println(Thread.currentThread().getId()+" | "+"book name must be store 50 character");
 		}
 		/**
 		 *  the length of author name should have only 50
 		 * character
 		 */
 		else if (authorname.length() > 50) {
-			System.out.println("authorname must be store 50 character");
+			System.out.println(Thread.currentThread().getId()+" | "+"authorname must be store 50 character");
 			/**
 			 * line no 111 represent that book name cannot accept null and blank
 			 */
 		} else if (name != null && name.isEmpty()) {
-			System.out.println("book name doestnot store null value and blank data");
+			System.out.println(Thread.currentThread().getId()+" | "+"book name doestnot store null value and blank data");
 
 			/**
 			 *  author name cannot accept null and blank
 			 */
 		} else if (authorname != null && authorname.isEmpty()) {
-			System.out.println("author name doestnot store null value and blank data");
+			System.out.println(Thread.currentThread().getId()+" | "+"author name doestnot store null value and blank data");
 		} else if (quantity <= 0) {
-			System.out.println(name + " book quantity should have greater than zero");
+			System.out.println(Thread.currentThread().getId()+" | "+name + " book quantity should have greater than zero");
 
 		} else if (price <= 0.0) {
-			System.out.println(name + " book price should have greater than zero");
+			System.out.println(Thread.currentThread().getId()+" | "+name + " book price should have greater than zero");
+		}else if(!bns) {
+			System.out.println(Thread.currentThread().getId()+" | "+name+  "book is already added in list");
 		}
 		else {
 			/**
@@ -128,6 +131,7 @@ public class Library {
 			 * trailing a string
 			 * 
 			 */
+			bns=true;
 			Book b = new Book(name.trim(), authorname.trim(), price, quantity);
 
 			blist.add(b);
@@ -147,6 +151,7 @@ public class Library {
 	 *            return a book on library so the quantity of book will be increase
 	 */
 	public void returnBook(String bname) {
+		boolean bookexist=true;
 		for (int s = 0; s < blist.size(); s++) {
 
 			Book b = blist.get(s);
@@ -156,21 +161,25 @@ public class Library {
 				int a = b.getquantity();
 
 				if (qlist.get(s) == a) {
-					System.out.println("can not return the book");
+					System.out.println(Thread.currentThread().getId()+" | "+"can not return the book");
 				} else {
-					System.out.println(s);
+					System.out.println(Thread.currentThread().getId()+" | "+s);
 					if (a >= 0) {
 
 						/**
 						 *  the quantity of book is increases
 						 */
 						b.setQuantity(a + 1);
+						bookexist=true;
 					}
 				
 				}
 				break;
 				
-			}
+			
 		}
-	}
+		if(!bookexist) {
+			System.out.println(Thread.currentThread().getId()+" | "+"book cannot return ");
+		}
+	}}
 }
