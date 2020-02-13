@@ -5,36 +5,30 @@ public class Runner {
 		/**
 		 * declare a library class object
 		 */
-		Library lib = new Library();
-		
+		Library lib1 = new Library();
+
 		/**
 		 * add book on library class object lib
 		 */
 
-		lib.addBook("  c++ ", "  pooja   ",8.50, 3);
-		
-		lib.printBook();
-		
-		
-		
-		lib.issueBook("c++");
-		lib.printBook();
-		
 
-		lib.issueBook("c++");
-		lib.printBook();
+		lib1.addBook("java", "pooja", 50.00, 4);
+		lib1.addBook("java", "pooja", 50.00, 4);
 
-		lib.issueBook("c++");
-		lib.printBook();
+		lib1.printBook();
 
-		lib.issueBook("c++");
-		lib.printBook();
-		 
+		Library lib2 = new Library();
+
+		lib2.addBook("c++", "darshita", 50.00, 4);
+
+		lib2.printBook();
+		lib1.printBook();
 		
-		lib.returnBook("c++");
-		lib.printBook();
+		
+		System.out.println("*******************");
+		
+		lib1.returnBook("ds");
+		lib2.printBook();
+
 	}
-	}
-	
-	
-
+}

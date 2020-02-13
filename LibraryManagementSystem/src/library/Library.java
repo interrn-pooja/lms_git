@@ -16,15 +16,22 @@ public class Library {
 
 	public Library() {
 		/**
-		 * declare a array list
+		 * initialize,define,instantiate an array list and check the list is null or not
+		 * 
 		 */
-		blist = new ArrayList<Book>();
-		qlist = new ArrayList<Integer>();
 
+		if (blist == null) {
+
+			blist = new ArrayList<Book>();
+			qlist = new ArrayList<Integer>();
+		}
 	}
 
-	private List<Book> blist;
-	private List<Integer> qlist;
+	/**
+	 * declare a array list
+	 */
+	private static List<Book> blist;
+	private static List<Integer> qlist;
 
 	/**
 	 * create a method issue book. issue book is used to perform a such operation
@@ -86,26 +93,26 @@ public class Library {
 
 	public void addBook(String name, String authorname, double price, int quantity) {
 		/**
-		 * line no 84 represent that the length of book name should have only 50
+		 * the length of book name should have only 50
 		 * character
 		 */
 		if (name.length() > 50) {
 			System.out.println("book name must be store 50 character");
 		}
 		/**
-		 * line no 91 represent that the length of author name should have only 50
+		 *  the length of author name should have only 50
 		 * character
 		 */
 		else if (authorname.length() > 50) {
 			System.out.println("authorname must be store 50 character");
 			/**
-			 * line no 96 represent that book name cannot accept null and blank
+			 * line no 111 represent that book name cannot accept null and blank
 			 */
 		} else if (name != null && name.isEmpty()) {
 			System.out.println("book name doestnot store null value and blank data");
 
 			/**
-			 * line no 102 represent that author name cannot accept null and blank
+			 *  author name cannot accept null and blank
 			 */
 		} else if (authorname != null && authorname.isEmpty()) {
 			System.out.println("author name doestnot store null value and blank data");
@@ -115,7 +122,6 @@ public class Library {
 		} else if (price <= 0.0) {
 			System.out.println(name + " book price should have greater than zero");
 		}
-
 		else {
 			/**
 			 * blist.add(b) is used to add a books on a list trim() is used to a leading and
@@ -123,8 +129,11 @@ public class Library {
 			 * 
 			 */
 			Book b = new Book(name.trim(), authorname.trim(), price, quantity);
+
 			blist.add(b);
-            qlist.add(quantity);
+
+			qlist.add(quantity);
+			
 		}
 
 	}
@@ -139,9 +148,9 @@ public class Library {
 	 */
 	public void returnBook(String bname) {
 		for (int s = 0; s < blist.size(); s++) {
-			
+
 			Book b = blist.get(s);
-			
+
 			if (bname.equalsIgnoreCase(b.getname())) {
 
 				int a = b.getquantity();
@@ -153,16 +162,15 @@ public class Library {
 					if (a >= 0) {
 
 						/**
-						 * line no 135 represent that the quantity of book is increases
+						 *  the quantity of book is increases
 						 */
 						b.setQuantity(a + 1);
 					}
-				}
 				
+				}
 				break;
-
+				
 			}
 		}
 	}
-
 }
